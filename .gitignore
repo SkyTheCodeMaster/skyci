@@ -1,1 +1,3 @@
 venv/*
+assets/github.json
+src/cogs/__pycache__/*
