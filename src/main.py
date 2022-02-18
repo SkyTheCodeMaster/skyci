@@ -9,6 +9,7 @@ import jinja2
 class MultiFileApplication(web.Application):
   def __init__(self,*args,**kwargs):
     super().__init__(*args,**kwargs)
+    self.cogs = {}
     aiohttp_jinja2.setup(self,loader=jinja2.FileSystemLoader("src/templates"))
 
   def _get_module(self,name:str,*,package=None):
@@ -24,6 +25,9 @@ class MultiFileApplication(web.Application):
       lib.setup(self)
     except Exception as e:
       raise
+
+  def add_cog(self,cog):
+    self.cogs[cog.__name__] = cog
 
 app = MultiFileApplication()
 
