@@ -1,1 +1,5 @@
 aiohttp==3.8.1
+cchardet
+aiodns
+aiohttp-jinja2
+Jinja2
