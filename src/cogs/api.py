@@ -1,3 +1,5 @@
+import json
+
 from aiohttp import web
 
 routes = web.RouteTableDef()
@@ -7,9 +9,13 @@ class ApiCog:
     self.app = app
     app.add_routes(routes)
 
-  @routes.get("/api")
-  async def hello(request):
-    return web.Response(text="Hello world lmao")
+    with open("src/data.json") as f:
+      data = json.loads(f.read())
+    
+  def _getTrackedProjectsData(self):
+    with open("src/data.json") as f:
+      data = json.loads(f.read())
+    
 
 def setup(app):
   app.add_cog(ApiCog(app))
