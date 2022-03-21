@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Sky's CI Server</title>
+  </head>
+  <body>
+    <h1>Sky's CI Server</h1>
+    <div>
+      <h2>Current Tracked Projects:</h2>
+      <table>
+        <thead>
+          <th>Source</th>
+          <th>Latest Commit</th>
+        </thead>
+        <tbody>
+          {% for row in projects %}
+          <tr>
+          <td>{{ loop.index }}</td>
+          {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
