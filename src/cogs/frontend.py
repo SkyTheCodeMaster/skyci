@@ -1,7 +1,9 @@
 from aiohttp import web
 import aiohttp_jinja2
 
-routes = web.RouteTableDef()
+from utils.multi_file_aiohttp import MultiFileRouteDef as RTD
+
+routes = RTD()
 
 class FrontendCog:
   def __init__(self,app):

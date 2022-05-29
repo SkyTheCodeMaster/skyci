@@ -1,8 +1,8 @@
 import json
 
-from aiohttp import web
+from utils.multi_file_aiohttp import MultiFileRouteDef as RTD
 
-routes = web.RouteTableDef()
+routes = RTD()
 
 class ApiCog:
   def __init__(self,app):
